@@ -1,9 +1,9 @@
-<mat-card *ngIf="cart.items.length" class="max-w-7xl mx-auto">
+<mat-card *ngIf="cart.items.length" class="max-w-5xl mx-auto">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-full scroll-auto">
         <ng-container matColumnDef="product">
             <th mat-header-cell *matHeaderCellDef>Product</th>
             <td mat-cell *matCellDef="let element">
-                <img src="{{ element.product }}" alt="product" class="w-[100px] my-5" />
+                <img src="{{ element.product }}" alt="product" class="w-[50px] my-5" />
             </td>
             <td mat-footer-cell *matFooterCellDef>
                 <button mat-raised-button routerLink="/home">Continue Shopping</button>
@@ -12,7 +12,7 @@
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
             <td mat-cell *matCellDef="let element">
-                <p class="truncate max-w-xs">{{ element.name }}</p>
+                <p class="truncate max-w-[70px]">{{ element.name }}</p>
             </td>
             <td mat-footer-cell *matFooterCellDef></td>
         </ng-container>
@@ -57,8 +57,9 @@
                 </button>
             </td>
             <td mat-footer-cell *matFooterCellDef>
-                <button (click)="onCheckout()" mat-raised-button color="primary" class="float-right">
-                    Proceed To Checkout
+                <button (click)="onCheckout()" mat-raised-button color="primary" class="float-right ">
+                    <span class="truncate max-w-[70px]">Checkout</span>
+                    
                 </button>
             </td>
         </ng-container>
