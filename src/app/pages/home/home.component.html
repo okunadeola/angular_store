@@ -2,15 +2,19 @@
   [autosize]="true"
   class="min-h-full max-w-7xl mx-auto border-x"
 >
-  <mat-drawer mode="side" opened class="p-6">
+  <!-- <mat-drawer mode="side" opened class="p-6">
     <app-filters (showCategory)="onShowCategory($event)"></app-filters>
-  </mat-drawer>
+  </mat-drawer> -->
   <mat-drawer-content class="p-6">
     <app-product-headers
       (columnsCountChange)="onColumnsCountChange($event)"
       (itemsCountChange)="onItemsCountChange($event)"
       (sortChange)="onSortChange($event)"
+      (showCategory)="onShowCategory($event)"
+
+
     ></app-product-headers>
+    
     <mat-grid-list
       *ngIf="products && products.length"
       gutterSize="16"
